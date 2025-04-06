@@ -61,4 +61,13 @@ class AprendicesController extends Controller
     {
         //
     }
+
+    public function index()
+    {
+        $aprendiz = auth::user();
+        $equipos = $equipo::where('aprendiz_id' , $aprendiz->id)->get();
+
+        return view('aprendiz.index',compact('equipos'));
+    }
+
 }

@@ -12,5 +12,12 @@
         <p class="text-gray-700">Este es tu panel de aprendizaje.</p>
         <a href="{{ route('loginn') }}" class="text-red-500 hover:underline">Cerrar sesión</a>
     </div>
+
+    <h2>Mis Equipos Registrados</h2>
+
+@foreach($equipos as $equipo)
+    <p>{{ $equipo->nombre }} - {{ $equipo->estado }}</p>
+@endforeach
+
 </body>
 </html>
